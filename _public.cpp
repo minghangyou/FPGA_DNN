@@ -18,15 +18,13 @@ int check_error_num(vector<int> a, vector<int> b) {
 
 
 
-void vec_copy(const vector<data_t>& data1, const vector<data_t>::iterator& begin, size_t n, vector<data_t>& data2) {
-	assert(begin + n < data1.end());
+void vec_copy(const vector<data_t>& data1, const vector<data_t>::iterator begin, size_t n, vector<data_t>& data2) {
+	assert(begin + (n-1) < data1.end());
 	for (size_t i = 0; i < n; i++) {
 		data2[i] = *(begin + i);
 	}
 
 }
-
-
 
 
 

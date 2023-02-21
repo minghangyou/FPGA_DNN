@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{cad52004-b9ec-4623-a63f-d3efb9b97763}</ProjectGuid>
+    <ProjectGuid>{E8E478C9-62ED-46C7-B5BE-128566F5830A}</ProjectGuid>
     <RootNamespace>C读取hdf5模型</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>FPGA_DNN</ProjectName>

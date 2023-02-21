@@ -128,10 +128,11 @@ int main() {
 	vector<data_t> OneSymbol_input_channelA; OneSymbol_input_channelA.resize(OneSymbol_size * 2);			// 存储单个符号对应的信道A
 	vector<data_t> OneSymbol_input_channelB; OneSymbol_input_channelB.resize(OneSymbol_size * 2);			// 处理单个符号对应的信道B
 
-
+	
 
 	for (size_t i = 0; i < SymbolNum; i++) {
 		// 每次取出一个符号（包含64个子载波，由于数据是复数，将实部和虚部进行拆分后就变为128个数据）
+		cout << i << endl;
 		vec_copy(input_data, input_data.begin() + i * (OneSymbol_size * 2), (OneSymbol_size * 2), OneSymbol_input_data);
 		vec_copy(input_channelA, input_channelA.begin() + i * (OneSymbol_size * 2), (OneSymbol_size * 2), OneSymbol_input_channelA);
 		vec_copy(input_channelB, input_channelB.begin() + i * (OneSymbol_size * 2), (OneSymbol_size * 2), OneSymbol_input_channelB);

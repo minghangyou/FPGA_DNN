@@ -100,7 +100,7 @@ bool GetLayerWeights(const string& filename, vector<string>& layers_name, unorde
 /*
 	功能：从一个容器中拷贝部分数据到另外一个容器
 */
-void vec_copy(const vector<data_t>& data1, const vector<data_t>::iterator& begin, size_t n, vector<data_t>& data2);
+void vec_copy(const vector<data_t>& data1, const vector<data_t>::iterator begin, size_t n, vector<data_t>& data2);
 
 
 
