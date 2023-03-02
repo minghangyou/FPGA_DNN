@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="weights.h" path="D:\HLS_FPGA\BN\HLS\BN\weights.h"/>
+    <originFiles name="bn.h" path="D:\HLS_FPGA\BN\HLS\BN\bn.h"/>
+    <originFiles name="bn.cpp" path="D:\HLS_FPGA\BN\HLS\BN\bn.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="D:\HLS_FPGA\BN\HLS\BN\test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

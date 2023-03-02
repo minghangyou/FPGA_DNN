@@ -1,0 +1,10 @@
+19:39:42 **** Incremental Build of configuration Debug for project bn ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:39:53 **** Incremental Build of configuration Debug for project bn ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

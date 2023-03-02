@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="bn" xd:componentRef="bn" xd:initiationInterval="185" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(in)" xd:originalName="in" xd:direction="inout" xd:interfaceRef="m_axi_IN_r" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(beta)" xd:originalName="beta" xd:direction="inout" xd:interfaceRef="m_axi_BETA" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(gamma)" xd:originalName="gamma" xd:direction="inout" xd:interfaceRef="m_axi_GAMMA" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(moving_mean)" xd:originalName="moving_mean" xd:direction="inout" xd:interfaceRef="m_axi_M_M" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(moving_variance)" xd:originalName="moving_variance" xd:direction="inout" xd:interfaceRef="m_axi_M_V" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(out)" xd:originalName="out" xd:direction="inout" xd:interfaceRef="m_axi_OUT_r" xd:busTypeRef="aximm" xd:arraySize="99999" xd:dataWidth="16" xd:bufferDirection="out"/>
+  <xd:arg xd:name="in_V" xd:originalName="in_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_IN_r" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="beta_V" xd:originalName="beta_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BETA" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="gamma_V" xd:originalName="gamma_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_GAMMA" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="moving_mean_V" xd:originalName="moving_mean_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_M_M" xd:dataWidth="32" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="moving_variance_V" xd:originalName="moving_variance_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_M_V" xd:dataWidth="32" xd:offset="0x30" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="out_V" xd:originalName="out_V" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_OUT_r" xd:dataWidth="32" xd:offset="0x38" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="184" xd:worst-case="184" xd:average-case="184"/>
+  <xd:resourceEstimates xd:LUT="8486" xd:FF="6281" xd:BRAM="12" xd:DSP="1"/>
+</xd:acceleratorMap>

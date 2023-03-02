@@ -1,0 +1,963 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 183.762 ; gain = 92.234
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 183.762 ; gain = 92.234
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:36 . Memory (MB): peak = 214.340 ; gain = 122.812
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:49) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:36 . Memory (MB): peak = 261.660 ; gain = 170.133
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:40) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'in_m.V' (BN/bn.cpp:25) automatically.
+INFO: [XFORM 203-102] Partitioning array 'beta_m.V' (BN/bn.cpp:26) automatically.
+INFO: [XFORM 203-102] Partitioning array 'gamma_m.V' (BN/bn.cpp:27) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:28) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:49) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:34:30) to (BN/bn.cpp:33:37) in function 'bn'... converting 41 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:38 . Memory (MB): peak = 331.680 ; gain = 240.152
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'BETA' (BN/bn.cpp:35:36). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'GAMMA' (BN/bn.cpp:36:38). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'IN' (BN/bn.cpp:34:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'M_M' (BN/bn.cpp:37:50). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'M_V' (BN/bn.cpp:38:58). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 32 on port 'OUT' (BN/bn.cpp:58:3). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:38 . Memory (MB): peak = 346.285 ; gain = 254.758
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 38.783 seconds; current allocated memory: 284.921 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.228 seconds; current allocated memory: 286.012 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.401 seconds; current allocated memory: 287.291 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.497 seconds; current allocated memory: 289.101 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 1.15 seconds; current allocated memory: 292.095 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_sdiv_44s_14ns_44_48_seq_1' to 'bn_sdiv_44s_14ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bn_ama_submuladd_16s_16s_16s_26s_33_1_1' to 'bn_ama_submuladd_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_ama_submuladd_cud': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bn_sdiv_44s_14ns_bkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.515 seconds; current allocated memory: 297.072 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'bn_sdiv_44s_14ns_bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:46 . Memory (MB): peak = 382.391 ; gain = 290.863
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 46.388 seconds; peak allocated memory: 297.072 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+WARNING: [HLS 200-40] BN/bn.cpp:68:2: error: unterminated conditional directive
+#ifdef SOLUTION2
+ ^
+1 error generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 184.219 ; gain = 92.781
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 184.219 ; gain = 92.781
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:33 . Memory (MB): peak = 217.375 ; gain = 125.938
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:107) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:33 . Memory (MB): peak = 264.195 ; gain = 172.758
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BN/bn.cpp:88) in function 'bn' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:92) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (BN/bn.cpp:99) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (BN/bn.cpp:115) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'in_m.V' (BN/bn.cpp:80) automatically.
+INFO: [XFORM 203-102] Partitioning array 'beta_m.V' (BN/bn.cpp:81) automatically.
+INFO: [XFORM 203-102] Partitioning array 'gamma_m.V' (BN/bn.cpp:82) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:83) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:84) automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_pack.V' (BN/bn.cpp:90) automatically.
+INFO: [XFORM 203-102] Partitioning array 'beta_pack.V' (BN/bn.cpp:90) automatically.
+INFO: [XFORM 203-102] Partitioning array 'gamma_pack.V' (BN/bn.cpp:90) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_mean_pack.V' (BN/bn.cpp:90) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_variance_pack.V' (BN/bn.cpp:90) automatically.
+INFO: [XFORM 203-102] Partitioning array 'result.V' (BN/bn.cpp:91) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:107) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:88:47) to (BN/bn.cpp:88:40) in function 'bn'... converting 41 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:34 . Memory (MB): peak = 335.426 ; gain = 243.988
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:35 . Memory (MB): peak = 350.184 ; gain = 258.746
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 35.621 seconds; current allocated memory: 290.156 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.214 seconds; current allocated memory: 291.279 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'M_V' (BN/bn.cpp:97) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 77.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.526 seconds; current allocated memory: 293.081 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.497 seconds; current allocated memory: 295.532 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 297.937 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_sdiv_44s_14ns_44_48_1' to 'bn_sdiv_44s_14ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bn_ama_submuladd_16s_16s_16s_26s_33_1_1' to 'bn_ama_submuladd_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_ama_submuladd_cud': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bn_sdiv_44s_14ns_bkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.438 seconds; current allocated memory: 304.258 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'bn_sdiv_44s_14ns_bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:43 . Memory (MB): peak = 392.473 ; gain = 301.035
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 42.962 seconds; peak allocated memory: 304.258 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 184.324 ; gain = 92.793
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 184.324 ; gain = 92.793
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:33 . Memory (MB): peak = 214.863 ; gain = 123.332
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:107) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:34 . Memory (MB): peak = 261.078 ; gain = 169.547
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BN/bn.cpp:88) in function 'bn' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (BN/bn.cpp:88) in function 'bn' partially with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:97) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'in_m.V' (BN/bn.cpp:82) automatically.
+INFO: [XFORM 203-102] Partitioning array 'beta_m.V' (BN/bn.cpp:83) automatically.
+INFO: [XFORM 203-102] Partitioning array 'gamma_m.V' (BN/bn.cpp:84) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:85) automatically.
+INFO: [XFORM 203-102] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:86) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:107) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:88:50) to (BN/bn.cpp:88:44) in function 'bn'... converting 161 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 335.867 ; gain = 244.336
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:39 . Memory (MB): peak = 351.703 ; gain = 260.172
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 39.192 seconds; current allocated memory: 292.670 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.232 seconds; current allocated memory: 293.793 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'M_V' (BN/bn.cpp:95) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 16, Depth = 89.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.187 seconds; current allocated memory: 298.003 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.266 seconds; current allocated memory: 304.385 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 1.501 seconds; current allocated memory: 307.483 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_sdiv_44s_14ns_44_48_1' to 'bn_sdiv_44s_14ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bn_ama_submuladd_16s_16s_16s_26s_33_1_1' to 'bn_ama_submuladd_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_ama_submuladd_cud': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bn_sdiv_44s_14ns_bkb': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.719 seconds; current allocated memory: 319.713 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'bn_sdiv_44s_14ns_bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:51 . Memory (MB): peak = 424.883 ; gain = 333.352
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 51.517 seconds; peak allocated memory: 319.713 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from BN/bn.cpp:1:
+BN/bn.cpp:97:35: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+ in_m[i][k].range(15,0) = in_pack.range(k * 16 + 15, k * 16);
+                          ~~~~~~~ ^
+BN/bn.cpp:98:50: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            beta_m[i][k].range(15,0) = beta_pack.range(k * 16 + 15, k * 16);
+                                       ~~~~~~~~~ ^
+BN/bn.cpp:99:52: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            gamma_m[i][k].range(15,0) = gamma_pack.range(k * 16 + 15, k * 16);
+                                        ~~~~~~~~~~ ^
+BN/bn.cpp:100:64: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_mean_m[i][k].range(15,0) = moving_mean_pack.range(k * 16 + 15, k * 16);
+                                              ~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:101:72: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_variance_m[i][k].range(15,0) = moving_variance_pack.range(k * 16 + 15, k * 16);
+                                                  ~~~~~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:112:13: error: no matching function for call to 'sqrt'
+            hls::sqrt(tmp_num, sqrt_num);
+            ^~~~~~~~~
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1267:17: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_fixed<W,I> sqrt(ap_fixed<W,I> x){
+                ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1271:18: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_ufixed<W,I> sqrt(ap_ufixed<W,I> x){
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1275:13: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_int<I> sqrt(ap_int<I> x){
+            ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1279:14: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_uint<I> sqrt(ap_uint<I> x){
+             ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:824:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  double sqrt(double);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:825:9: note: candidate function not viable: requires 1 argument, but 2 were provided
+  float sqrt(float);
+        ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:826:8: note: candidate function not viable: requires 1 argument, but 2 were provided
+  half sqrt(half);
+       ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:829:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int8_t sqrt(int8_t);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:830:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint8_t sqrt(uint8_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:831:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int16_t sqrt(int16_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:832:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint16_t sqrt(uint16_t);
+           ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:833:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int32_t sqrt(int32_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:834:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint32_t sqrt(uint32_t);
+           ^
+In file included from BN/bn.cpp:1:
+BN/bn.cpp:114:28: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            out[i * 4 + k].range(15, 0) = tmp.range(15, 0);
+            ~~~~~~~~~~~~~~ ^
+7 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from BN/bn.cpp:1:
+BN/bn.cpp:97:35: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+ in_m[i][k].range(15,0) = in_pack.range(k * 16 + 15, k * 16);
+                          ~~~~~~~ ^
+BN/bn.cpp:98:50: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            beta_m[i][k].range(15,0) = beta_pack.range(k * 16 + 15, k * 16);
+                                       ~~~~~~~~~ ^
+BN/bn.cpp:99:52: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            gamma_m[i][k].range(15,0) = gamma_pack.range(k * 16 + 15, k * 16);
+                                        ~~~~~~~~~~ ^
+BN/bn.cpp:100:64: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_mean_m[i][k].range(15,0) = moving_mean_pack.range(k * 16 + 15, k * 16);
+                                              ~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:101:72: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_variance_m[i][k].range(15,0) = moving_variance_pack.range(k * 16 + 15, k * 16);
+                                                  ~~~~~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:112:13: error: no matching function for call to 'sqrt'
+            hls::sqrt(tmp_num, sqrt_num);
+            ^~~~~~~~~
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1267:17: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_fixed<W,I> sqrt(ap_fixed<W,I> x){
+                ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1271:18: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_ufixed<W,I> sqrt(ap_ufixed<W,I> x){
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1275:13: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_int<I> sqrt(ap_int<I> x){
+            ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1279:14: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_uint<I> sqrt(ap_uint<I> x){
+             ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:824:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  double sqrt(double);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:825:9: note: candidate function not viable: requires 1 argument, but 2 were provided
+  float sqrt(float);
+        ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:826:8: note: candidate function not viable: requires 1 argument, but 2 were provided
+  half sqrt(half);
+       ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:829:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int8_t sqrt(int8_t);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:830:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint8_t sqrt(uint8_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:831:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int16_t sqrt(int16_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:832:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint16_t sqrt(uint16_t);
+           ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:833:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int32_t sqrt(int32_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:834:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint32_t sqrt(uint32_t);
+           ^
+In file included from BN/bn.cpp:1:
+BN/bn.cpp:114:28: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            out[i * 4 + k].range(15, 0) = tmp.range(15, 0);
+            ~~~~~~~~~~~~~~ ^
+7 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from BN/bn.cpp:1:
+BN/bn.cpp:97:35: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+ in_m[i][k].range(15,0) = in_pack.range(k * 16 + 15, k * 16);
+                          ~~~~~~~ ^
+BN/bn.cpp:98:50: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            beta_m[i][k].range(15,0) = beta_pack.range(k * 16 + 15, k * 16);
+                                       ~~~~~~~~~ ^
+BN/bn.cpp:99:52: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            gamma_m[i][k].range(15,0) = gamma_pack.range(k * 16 + 15, k * 16);
+                                        ~~~~~~~~~~ ^
+BN/bn.cpp:100:64: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_mean_m[i][k].range(15,0) = moving_mean_pack.range(k * 16 + 15, k * 16);
+                                              ~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:101:72: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            moving_variance_m[i][k].range(15,0) = moving_variance_pack.range(k * 16 + 15, k * 16);
+                                                  ~~~~~~~~~~~~~~~~~~~~ ^
+BN/bn.cpp:112:13: error: no matching function for call to 'sqrt'
+            hls::sqrt(tmp_num, sqrt_num);
+            ^~~~~~~~~
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1267:17: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_fixed<W,I> sqrt(ap_fixed<W,I> x){
+                ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1271:18: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_ufixed<W,I> sqrt(ap_ufixed<W,I> x){
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1275:13: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_int<I> sqrt(ap_int<I> x){
+            ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:1279:14: note: candidate function template not viable: requires 1 argument, but 2 were provided
+  ap_uint<I> sqrt(ap_uint<I> x){
+             ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:824:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  double sqrt(double);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:825:9: note: candidate function not viable: requires 1 argument, but 2 were provided
+  float sqrt(float);
+        ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:826:8: note: candidate function not viable: requires 1 argument, but 2 were provided
+  half sqrt(half);
+       ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:829:10: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int8_t sqrt(int8_t);
+         ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:830:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint8_t sqrt(uint8_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:831:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int16_t sqrt(int16_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:832:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint16_t sqrt(uint16_t);
+           ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:833:11: note: candidate function not viable: requires 1 argument, but 2 were provided
+  int32_t sqrt(int32_t);
+          ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\hls_math.h:834:12: note: candidate function not viable: requires 1 argument, but 2 were provided
+  uint32_t sqrt(uint32_t);
+           ^
+In file included from BN/bn.cpp:1:
+BN/bn.cpp:114:28: error: member reference base type 'uint64_t' (aka 'unsigned long long') is not a structure or union
+            out[i * 4 + k].range(15, 0) = tmp.range(15, 0);
+            ~~~~~~~~~~~~~~ ^
+7 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from BN/bn.cpp:1:
+BN/bn.cpp:105:4: error: no matching function for call to 'sqrt_fixed'
+   sqrt_fixed(moving_variance_m[j] + epsilon, x_norm);
+   ^~~~~~~~~~
+BN/bn.cpp:7:13: note: candidate function not viable: no known conversion from 'typename RType<16, 6, true>::plus' (aka 'ap_fixed<17, 7>') to 'data_t &' (aka 'ap_fixed<16, 6, AP_RND, AP_SAT> &') for 1st argument; 
+inline void sqrt_fixed(data_t& in, data_t& out) {
+            ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:42:17: note: candidate function template not viable: requires 1 argument, but 2 were provided
+ap_fixed<W_,I_> sqrt_fixed(ap_fixed<W_,I_> x)
+                ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:374:18: note: candidate function template not viable: requires 1 argument, but 2 were provided
+ap_ufixed<W_,I_> sqrt_fixed(ap_ufixed<W_,I_> x) {
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:379:12: note: candidate function template not viable: requires 1 argument, but 2 were provided
+ap_int<I_> sqrt_fixed(ap_int<I_> x) {
+           ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:384:13: note: candidate function template not viable: requires 1 argument, but 2 were provided
+ap_uint<I_> sqrt_fixed(ap_uint<I_> x) {
+            ^
+1 error generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 184.523 ; gain = 93.043
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 184.523 ; gain = 93.043
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:34 . Memory (MB): peak = 215.617 ; gain = 124.137
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:106) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:34 . Memory (MB): peak = 261.926 ; gain = 170.445
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BN/bn.cpp:87) in function 'bn' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:90) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (BN/bn.cpp:102) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (BN/bn.cpp:111) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'result_pack.V' (BN/bn.cpp:109) automatically.
+INFO: [XFORM 203-101] Partitioning array 'in_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'beta_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'gamma_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'result.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:106) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:87:48) to (BN/bn.cpp:87:39) in function 'bn'... converting 57 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:35 . Memory (MB): peak = 330.934 ; gain = 239.453
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 344.488 ; gain = 253.008
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 36.757 seconds; current allocated memory: 284.765 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.221 seconds; current allocated memory: 285.888 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'M_V' (BN/bn.cpp:95) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Discarding stage scheduling solution.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 32.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.542 seconds; current allocated memory: 287.576 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.389 seconds; current allocated memory: 289.701 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 292.106 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_mul_mul_13ns_16s_29_1_1' to 'bn_mul_mul_13ns_1bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_mul_mul_13ns_1bkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.297 seconds; current allocated memory: 297.981 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:44 . Memory (MB): peak = 384.676 ; gain = 293.195
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 43.568 seconds; peak allocated memory: 297.981 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from BN/bn.cpp:1:
+BN/bn.cpp:157:4: error: use of undeclared identifier 'x_norm_m'; did you mean 'x_norm'?
+   x_norm_m[j] = gamma_m[j] / tmp_sqrt;
+   ^~~~~~~~
+   x_norm
+BN/bn.cpp:139:118: note: 'x_norm' declared here
+  ap_uint<64> in_pack[4], beta_pack[4], gamma_pack[4], moving_mean_pack[4], moving_variance_pack[4], result_pack[4], x_norm[4], x_centered[4];
+                                                                                                                     ^
+BN/bn.cpp:158:4: error: use of undeclared identifier 'x_centered_m'; did you mean 'x_centered'?
+   x_centered_m[j] = in_m[j] - moving_mean_m[j];
+   ^~~~~~~~~~~~
+   x_centered
+BN/bn.cpp:139:129: note: 'x_centered' declared here
+  ap_uint<64> in_pack[4], beta_pack[4], gamma_pack[4], moving_mean_pack[4], moving_variance_pack[4], result_pack[4], x_norm[4], x_centered[4];
+                                                                                                                                ^
+BN/bn.cpp:159:4: error: use of undeclared identifier 'result_m'; did you mean 'result'?
+   result_m[j] = x_norm_m[j] * x_centered_m[j] + beta_m[j];
+   ^~~~~~~~
+   result
+BN/bn.cpp:130:81: note: 'result' declared here
+ data_t in_m[4], beta_m[4], gamma_m[4], moving_mean_m[4], moving_variance_m[4], result[4];
+                                                                                ^
+BN/bn.cpp:159:18: error: use of undeclared identifier 'x_norm_m'; did you mean 'x_norm'?
+   result_m[j] = x_norm_m[j] * x_centered_m[j] + beta_m[j];
+                 ^~~~~~~~
+                 x_norm
+BN/bn.cpp:139:118: note: 'x_norm' declared here
+  ap_uint<64> in_pack[4], beta_pack[4], gamma_pack[4], moving_mean_pack[4], moving_variance_pack[4], result_pack[4], x_norm[4], x_centered[4];
+                                                                                                                     ^
+BN/bn.cpp:159:32: error: use of undeclared identifier 'x_centered_m'; did you mean 'x_centered'?
+   result_m[j] = x_norm_m[j] * x_centered_m[j] + beta_m[j];
+                               ^~~~~~~~~~~~
+                               x_centered
+BN/bn.cpp:139:129: note: 'x_centered' declared here
+  ap_uint<64> in_pack[4], beta_pack[4], gamma_pack[4], moving_mean_pack[4], moving_variance_pack[4], result_pack[4], x_norm[4], x_centered[4];
+                                                                                                                                ^
+BN/bn.cpp:160:34: error: use of undeclared identifier 'result_m'; did you mean 'result'?
+   result_pack[j].range(15, 0) = result_m[j].range(15, 0);
+                                 ^~~~~~~~
+                                 result
+BN/bn.cpp:130:81: note: 'result' declared here
+ data_t in_m[4], beta_m[4], gamma_m[4], moving_mean_m[4], moving_variance_m[4], result[4];
+                                                                                ^
+In file included from BN/bn.cpp:1:
+In file included from BN/bn.cpp:1:
+In file included from BN/bn.h:4:
+In file included from E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_fixed.h:55:
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_fixed_base.h:838:13: warning: shift count is negative [-Wshift-count-negative]
+      ret.V <<= (_AP_I - _AP_W);
+            ^   ~~~~~~~~~~~~~~~
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_int_base.h:359:18: note: in instantiation of member function 'ap_fixed_base<27, 17, true, 5, 3, 0>::to_ap_int_base' requested here
+    Base::V = op.to_ap_int_base().V;
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_int.h:249:9: note: in instantiation of function template specialization 'ap_int_base<64, false>::ap_int_base<27, 17, true, 5, 3, 0>' requested here
+      : Base((ap_fixed_base<_AP_W2, _AP_I2, true, _AP_Q2, _AP_O2, _AP_N2>)op) {}
+        ^
+BN/bn.cpp:157:18: note: in instantiation of function template specialization 'ap_uint<64>::ap_uint<27, 17, 5, 3, 0>' requested here
+   x_norm_m[j] = gamma_m[j] / tmp_sqrt;
+                 ^
+In file included from BN/bn.cpp:1:
+In file included from BN/bn.cpp:1:
+In file included from BN/bn.h:4:
+In file included from E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_fixed.h:55:
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_fixed_base.h:838:13: warning: shift count is negative [-Wshift-count-negative]
+      ret.V <<= (_AP_I - _AP_W);
+            ^   ~~~~~~~~~~~~~~~
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_int_base.h:359:18: note: in instantiation of member function 'ap_fixed_base<17, 7, true, 5, 3, 0>::to_ap_int_base' requested here
+    Base::V = op.to_ap_int_base().V;
+                 ^
+E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot\ap_int.h:249:9: note: in instantiation of function template specialization 'ap_int_base<64, false>::ap_int_base<17, 7, true, 5, 3, 0>' requested here
+      : Base((ap_fixed_base<_AP_W2, _AP_I2, true, _AP_Q2, _AP_O2, _AP_N2>)op) {}
+        ^
+BN/bn.cpp:158:22: note: in instantiation of function template specialization 'ap_uint<64>::ap_uint<17, 7, 5, 3, 0>' requested here
+   x_centered_m[j] = in_m[j] - moving_mean_m[j];
+                     ^
+2 warnings and 6 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 184.258 ; gain = 92.770
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 184.258 ; gain = 92.770
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 214.715 ; gain = 123.227
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'bn' (BN/bn.cpp:156) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:33 . Memory (MB): peak = 260.750 ; gain = 169.262
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BN/bn.cpp:140) in function 'bn' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:143) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (BN/bn.cpp:162) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'result_pack.V' (BN/bn.cpp:141) automatically.
+INFO: [XFORM 203-101] Partitioning array 'in_m.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'beta_m.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'gamma_m.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'result.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_norm.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_centered.V' (BN/bn.cpp:130) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'bn' (BN/bn.cpp:156) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:140:48) to (BN/bn.cpp:140:39) in function 'bn'... converting 57 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:34 . Memory (MB): peak = 331.840 ; gain = 240.352
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:35 . Memory (MB): peak = 345.160 ; gain = 253.672
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 35.309 seconds; current allocated memory: 285.132 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.197 seconds; current allocated memory: 286.254 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'M_V' (BN/bn.cpp:148) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Discarding stage scheduling solution.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 61.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.496 seconds; current allocated memory: 288.034 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.435 seconds; current allocated memory: 290.506 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.635 seconds; current allocated memory: 292.947 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_sdiv_26ns_14ns_26_30_1' to 'bn_sdiv_26ns_14nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bn_mul_mul_16s_16s_32_1_1' to 'bn_mul_mul_16s_16cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_mul_mul_16s_16cud': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bn_sdiv_26ns_14nsbkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.243 seconds; current allocated memory: 299.402 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'bn_sdiv_26ns_14nsbkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:09 ; elapsed = 00:00:42 . Memory (MB): peak = 387.715 ; gain = 296.227
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 42.02 seconds; peak allocated memory: 299.402 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BN/bn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 184.414 ; gain = 92.977
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 184.414 ; gain = 92.977
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 215.734 ; gain = 124.297
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:106) automatically.
+WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:31 . Memory (MB): peak = 261.832 ; gain = 170.395
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<16, 6>' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:36).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BN/bn.cpp:87) in function 'bn' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<16, 6>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<16, 6>' completely with a factor of 11.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (BN/bn.cpp:90) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (BN/bn.cpp:102) in function 'bn' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (BN/bn.cpp:111) in function 'bn' completely with a factor of 4.
+INFO: [XFORM 203-102] Partitioning array 'result_pack.V' (BN/bn.cpp:109) automatically.
+INFO: [XFORM 203-101] Partitioning array 'in_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'beta_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'gamma_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_mean_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'moving_variance_m.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'result.V' (BN/bn.cpp:79) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<16, 6>' into 'sqrt_fixed' (BN/bn.cpp:10) automatically.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed' into 'bn' (BN/bn.cpp:106) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:1) to (E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<16, 6>'... converting 80 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (BN/bn.cpp:87:48) to (BN/bn.cpp:87:39) in function 'bn'... converting 57 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:32 . Memory (MB): peak = 331.012 ; gain = 239.574
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:33 . Memory (MB): peak = 344.305 ; gain = 252.867
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bn' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<16, 6>' to 'sqrt_fixed_16_6_s'.
+WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<16, 6>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 33.448 seconds; current allocated memory: 284.765 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.194 seconds; current allocated memory: 285.888 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'M_V' (BN/bn.cpp:95) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Discarding stage scheduling solution.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 32.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.488 seconds; current allocated memory: 287.576 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.358 seconds; current allocated memory: 289.701 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_16_6_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_16_6_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.564 seconds; current allocated memory: 292.106 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/IN_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/BETA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/GAMMA' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_M' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/M_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/OUT_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/moving_variance_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bn/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V', 'beta_V', 'gamma_V', 'moving_mean_V', 'moving_variance_V' and 'out_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'bn_mul_mul_13ns_16s_29_1_1' to 'bn_mul_mul_13ns_1bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bn_mul_mul_13ns_1bkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bn'.
+INFO: [HLS 200-111]  Elapsed time: 1.147 seconds; current allocated memory: 297.981 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:09 ; elapsed = 00:00:40 . Memory (MB): peak = 385.207 ; gain = 293.770
+INFO: [VHDL 208-304] Generating VHDL RTL for bn.
+INFO: [VLOG 209-307] Generating Verilog RTL for bn.
+INFO: [HLS 200-112] Total elapsed time: 39.645 seconds; peak allocated memory: 297.981 MB.

@@ -1,0 +1,21 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'E:/programs/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user '26326' on host 'laptop-363s4mhv' (Windows NT_amd64 version 6.2) on Thu Mar 02 17:41:27 +0800 2023
+INFO: [HLS 200-10] In directory 'D:/HLS_FPGA/BN/HLS'
+Sourcing Tcl script 'D:/HLS_FPGA/BN/HLS/BN/solution5/export.tcl'
+INFO: [HLS 200-10] Opening project 'D:/HLS_FPGA/BN/HLS/BN'.
+INFO: [HLS 200-10] Opening solution 'D:/HLS_FPGA/BN/HLS/BN/solution5'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/programs/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Thu Mar  2 17:41:57 2023...

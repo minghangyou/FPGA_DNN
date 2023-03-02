@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="BN" solutionName="solution4" date="2023-03-02T16:48:56.593+0800"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution5" date="2023-03-02T17:40:18.783+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution5" date="2023-03-02T17:40:18.780+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed&lt;16, 6>' to 'sqrt_fixed_16_6_s'." projectName="BN" solutionName="solution5" date="2023-03-02T17:40:18.775+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR." projectName="BN" solutionName="solution5" date="2023-03-02T17:40:16.764+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution4" date="2023-03-02T16:04:55.291+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution4" date="2023-03-02T16:04:55.287+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed&lt;16, 6>' to 'sqrt_fixed_16_6_s'." projectName="BN" solutionName="solution4" date="2023-03-02T16:04:55.284+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR." projectName="BN" solutionName="solution4" date="2023-03-02T16:04:52.221+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/OUT' to 'bn/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution3" date="2023-03-02T15:33:18.901+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'bn/IN' to 'bn/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="BN" solutionName="solution3" date="2023-03-02T15:33:18.899+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed&lt;16, 6>' to 'sqrt_fixed_16_6_s'." projectName="BN" solutionName="solution3" date="2023-03-02T15:33:18.896+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] E:/programs/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR." projectName="BN" solutionName="solution3" date="2023-03-02T15:33:17.243+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
